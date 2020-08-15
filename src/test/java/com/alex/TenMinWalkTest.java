@@ -1,11 +1,8 @@
 package com.alex;
 
-
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-
-import com.alex.TenMinWalk;
 
 public class TenMinWalkTest {
 	@Test
