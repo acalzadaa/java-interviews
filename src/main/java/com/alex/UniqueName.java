@@ -1,8 +1,13 @@
 package com.alex;
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class UniqueName {
-	public static String firstUniqueName(String[] names) {
+	public String firstUniqueName(String[] names) {
+
+		List<String> uniqueNames = new ArrayList<>();
 
 		HashMap<String, Integer> unique = new HashMap<>();
 
@@ -25,7 +30,4 @@ public class UniqueName {
 
 	}
 
-	public static void main(String[] args) {
-		System.out.println(firstUniqueName(new String[] { "Abbi", "Adeline", "Abbi", "Adalia" }));
-	}
 }
