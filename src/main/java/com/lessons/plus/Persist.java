@@ -12,11 +12,8 @@ public class Persist {
 		long result = 0;
 		long reminder = 0;
 		while (number > 0) {
-			// cual es el resultado?
 			result = number / 10;
-			// cual es el residuo?
 			reminder = number % 10;
-			// agregar acumulador
 			acum *= reminder;
 			if (reminder == 0) {
 				return 1;
