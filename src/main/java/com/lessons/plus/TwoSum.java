@@ -1,22 +1,15 @@
 package com.lessons.plus;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class TwoSum {
 	public int[] findTwoSum(int[] numbers, int target) {
 
-		for (int i = 0, diff = 0; i < numbers.length; i++) {
+		List<Integer> list = Arrays.stream(numbers).boxed().collect(Collectors.toList());
+		list = list.stream().filter(n -> n < target).collect(Collectors.toList());
+		return numbers;
 
-			diff += target - numbers[i];
-
-			if (diff > 0) {
-
-				for (int j = i + 1; j < numbers.length; j++) {
-					if (numbers[i] + numbers[j] == target) {
-						return new int[] { i, j };
-					}
-				}
-			}
-		}
-		return null;
 	}
-
 }

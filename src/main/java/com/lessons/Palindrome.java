@@ -11,13 +11,13 @@ public class Palindrome {
 		StringBuilder sb = new StringBuilder(lowercase);
 		StringBuilder sbNew = new StringBuilder(lowercase);
 		sbNew.reverse();
-		
-		for (int i = 0; i < sb.length() /2; i++) {
-			if(sb.charAt(i) != sbNew.charAt(i)) {
+
+		for (int i = 0; i < sb.length() / 2; i++) {
+			if (sb.charAt(i) != sbNew.charAt(i)) {
 				return false;
 			}
 		}
-		
+
 		return true;
 	}
 

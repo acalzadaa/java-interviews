@@ -3,8 +3,9 @@ package com.lessons;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Set;
 
-public class MergeNames {
+public class MergeStringArrays {
 
 	public static String[] uniqueNames(String[] names1, String[] names2) {
 
@@ -14,16 +15,16 @@ public class MergeNames {
 		listOfNames.addAll(Arrays.asList(names2));
 
 		// eliminate the repeated ones
-		HashSet<String> uniqueListOfNames = new HashSet<>(listOfNames);
-		String[] arrayOfNames = new String[uniqueListOfNames.size()];
-		arrayOfNames = uniqueListOfNames.toArray(arrayOfNames);
-		return arrayOfNames;
+		Set<String> uniqueListOfNames = new HashSet<>(listOfNames);
+
+		return uniqueListOfNames.stream().toArray(String[]::new);
+
 	}
 
 	public static void main(String[] args) {
 		String[] names1 = new String[] { "Ava", "Emma", "Olivia" };
 		String[] names2 = new String[] { "Olivia", "Sophia", "Emma" };
-		System.out.println(String.join(", ", MergeNames.uniqueNames(names1, names2))); // should print Ava, Emma,
+		System.out.println(String.join(", ", MergeStringArrays.uniqueNames(names1, names2))); // should print Ava, Emma,
 																						// Olivia, Sophia
 	}
 }

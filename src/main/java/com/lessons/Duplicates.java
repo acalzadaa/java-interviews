@@ -1,43 +1,26 @@
 package com.lessons;
+
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class Duplicates {
 
 	public static void main(String[] args) {
-		int[] intArray = { 1, 2, 2, 3, 3, 3 };
+		Integer[] intArray = { 1, 2, 2, 3, 3, 3 };
 
 		System.out.println(Arrays.deepToString(dups(intArray)));
 	}
 
-	private static Integer[] dups(int[] intArray) {
+	private static Integer[] dups(Integer[] intArray) {
 
-		HashMap<Integer, Integer> intMap = new HashMap<>();
+		List<Integer> numbers = new ArrayList<>(Arrays.asList(intArray));
 
-		for (int i = 0; i < intArray.length; i++) {
-			if (intMap.containsKey(intArray[i])) {
-				intMap.replace(intArray[i], intMap.get(intArray[i]) + 1);
-			} else {
-				intMap.put(intArray[i], 1);
-			}
-		}
+		return numbers.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet()
+				.stream().filter(keys -> keys.getValue() > 1).map(keys -> keys.getKey()).toArray(Integer[]::new);
 
-		List<Integer> intList = new ArrayList<>();
-
-		for (Integer intElem : intMap.keySet()) {
-			if (intMap.get(intElem) > 1) {
-				intList.add(intElem);
-			}
-		}
-
-		// convert to Array
-		Integer[] intReturn = new Integer[intList.toArray().length];
-
-		intReturn = intList.toArray(intReturn);
-
-		return intReturn;
 	}
 
 }

@@ -3,11 +3,12 @@ package com.lessons;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Map;
 
 public class LinkedListCycles {
 
 	// Given a linked list, determine whether it contains a cycle.
-	// User FLOYD cycle-finding
+	// Use FLOYD cycle-finding
 	public static void main(String[] args) {
 
 		LinkedList<Integer> cycle = new LinkedList<>();
@@ -21,7 +22,7 @@ public class LinkedListCycles {
 	}
 
 	private static boolean isCycle(LinkedList<Integer> cycle) {
-		HashMap<Integer, Integer> cycleTest = new HashMap<>();
+		Map<Integer, Integer> cycleTest = new HashMap<>();
 		boolean isCyclic = false;
 
 		for (Iterator<Integer> iterator = cycle.iterator(); iterator.hasNext();) {
