@@ -1,4 +1,4 @@
-package com.lessons;
+package com.lessons.plus;
 
 import java.util.Set;
 import java.util.stream.Collectors;
