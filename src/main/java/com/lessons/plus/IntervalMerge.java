@@ -3,7 +3,10 @@ package com.lessons.plus;
 import java.util.Collections;
 import java.util.List;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /* receive a list of objects, each having a range of two integer numbers and find out the largest overlap of them 
  * return the biggest overlap pair 

@@ -16,7 +16,7 @@ public class RoutePlanner {
 				fromRow--;
 				flagX = true;
 			}
-		
+
 		// debo ir a abajo?
 		if (fromRow < toRow)
 			if (mapMatrix[fromRow + 1][fromColumn]) {
@@ -42,7 +42,7 @@ public class RoutePlanner {
 					flagY = true;
 				}
 		}
-		
+
 		// ya llegue?
 		if (fromRow == toRow && fromColumn == toColumn)
 			return true;
